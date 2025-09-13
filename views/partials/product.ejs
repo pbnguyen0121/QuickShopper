@@ -1,0 +1,21 @@
+<div class="col-lg-4">
+  <div class="card" style="width: 18rem;">
+    <img src="/images/<%= product.imageUrl %>" alt="<%= product.title %>">
+    <div class="card-body">
+      <h5 class="card-title"><%= product.title %></h5>
+      <p class="card-text"><%= product.description %></p>
+      <p class="card-text">
+        $<%= product.price.toFixed(2) %>
+        <% if (product.salePrice) { %>
+          <span class="sale-price text-muted" style="text-decoration: line-through;">
+            $<%= product.salePrice.toFixed(2) %>
+          </span>
+        <% } %>
+      </p>
+      <% if (user && user.role === 'customer') { %>
+        <!-- Buy button only for customers -->
+        <a href="/buy/<%= product._id %>" class="btn btn-success">Buy</a>
+      <% } %>
+    </div>
+  </div>
+</div>

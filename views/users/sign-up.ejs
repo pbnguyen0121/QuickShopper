@@ -1,0 +1,50 @@
+<div class="form-container">
+  <h1>Sign Up</h1>
+  <form action="/sign-up" method="POST">
+    <label for="firstName">First Name</label>
+    <input 
+      type="text" 
+      id="firstName" 
+      name="firstName" 
+      value="<%= values.firstName %>"
+    />
+    <% if (validationMessages.firstName) { %>
+      <p class="error-message"><%= validationMessages.firstName %></p>
+    <% } %>
+
+    <label for="lastName">Last Name</label>
+    <input 
+      type="text" 
+      id="lastName" 
+      name="lastName" 
+      value="<%= values.lastName %>"
+    />
+    <% if (validationMessages.lastName) { %>
+      <p class="error-message"><%= validationMessages.lastName %></p>
+    <% } %>
+
+    <label for="email">Email</label>
+    <input 
+      type="text" 
+      id="email" 
+      name="email" 
+      value="<%= values.email %>"
+    />
+    <% if (validationMessages.email) { %>
+      <p class="error-message"><%= validationMessages.email %></p>
+    <% } %>
+
+    <label for="password">Password</label>
+    <input 
+      type="password" 
+      id="password" 
+      name="password" 
+      value="<%= values.password %>"
+    />
+    <% if (validationMessages.password) { %>
+      <p class="error-message"><%= validationMessages.password %></p>
+    <% } %>
+
+    <button type="submit" class="continue-btn">Continue</button>
+  </form>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "assignment4",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Phuong Bac Nguyen",
+  "license": "ISC",
+  "description": "**Author:** Phuong Bac Nguyen  - 130135205\r **Course:** WEB322 – Winter 2025  \r **Project:** WEB322-2251-pbnguyen  \r **Deployed URL:** [https://web322-2251-pbnguyen.vercel.app](https://web322-2251-pbnguyen.vercel.app)",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "epxress": "^0.0.1-security",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-fileupload": "^1.5.1",
+    "express-session": "^1.18.1",
+    "mailgun.js": "^12.0.1",
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.12.1"
+  }
+}

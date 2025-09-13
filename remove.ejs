@@ -1,0 +1,9 @@
+<% layout = "main" %>
+<div class="form-container">
+  <h1>Delete Product</h1>
+  <p>Are you sure you want to delete the product "<%= product.title %>"?</p>
+  <form action="/inventory/remove/<%= product._id %>" method="POST">
+    <button type="submit" class="continue-btn">Yes, Delete</button>
+    <a href="/inventory/list" class="continue-btn">Cancel</a>
+  </form>
+</div>

@@ -1,0 +1,39 @@
+<% layout = "main" %>
+
+<section class="hero">
+  <div class="hero-overlay">
+    <h1>Bedding & Bath Sale</h1>
+    <p>Refresh your space – for less.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-card" style="background-image: url('/images/refine.jpg');">
+    <div class="text-container">
+      <h3>Discover Frozen Waterfalls</h3>
+      <p>(Various Regions)</p>
+    </div>
+  </div>
+  <div class="content-card" style="background-image: url('/images/mid-century-modern.jpg');">
+    <div class="text-container">
+      <h3>See a Show</h3>
+      <p>(Multiple Regions)</p>
+    </div>
+  </div>
+  <div class="content-card" style="background-image: url('/images/city-vibes.jpg');">
+    <div class="text-container">
+      <h3>Experience Central Park in Winter</h3>
+      <p>(NYC)</p>
+    </div>
+  </div>
+</section>
+
+<div class="row">
+  <% if (featuredProducts && featuredProducts.length > 0) { %>
+    <% featuredProducts.forEach(product => { %>
+      <%- include("../partials/product", { product: product }) %>
+    <% }); %>
+  <% } else { %>
+    <p>No featured products available at the moment.</p>
+  <% } %>
+</div>

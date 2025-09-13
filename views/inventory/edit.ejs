@@ -1,0 +1,43 @@
+<% layout = "main" %>
+<div class="form-container">
+  <h1>Edit Product</h1>
+  <form action="/inventory/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" value="<%= product.title %>" required />
+
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" value="<%= product.description %>" required />
+
+    <label for="category">Category</label>
+    <input type="text" id="category" name="category" value="<%= product.category %>" required />
+
+    <label for="price">Price</label>
+    <input type="number" step="0.01" id="price" name="price" value="<%= product.price %>" min="0.01" required />
+
+    <label for="salePrice">Sale Price</label>
+    <input type="number" step="0.01" id="salePrice" name="salePrice" value="<%= product.salePrice %>" min="0.01" />
+
+    <label for="shippingWeight">Shipping Weight (kg)</label>
+    <input type="number" id="shippingWeight" name="shippingWeight" value="<%= product.shippingWeight %>" min="1" required />
+
+    <label for="shippingWidth">Shipping Width (cm)</label>
+    <input type="number" id="shippingWidth" name="shippingWidth" value="<%= product.shippingWidth %>" min="1" required />
+
+    <label for="shippingLength">Shipping Length (cm)</label>
+    <input type="number" id="shippingLength" name="shippingLength" value="<%= product.shippingLength %>" min="1" required />
+
+    <label for="shippingHeight">Shipping Height (cm)</label>
+    <input type="number" id="shippingHeight" name="shippingHeight" value="<%= product.shippingHeight %>" min="1" required />
+
+    <label>Current Image:</label>
+    <img src="/public/images/<%= product.imageUrl %>" alt="<%= product.title %>" style="max-width:150px;"/>
+    <br/>
+    <label for="imageUrl">Change Image (optional):</label>
+    <input type="file" id="imageUrl" name="imageUrl" accept=".jpg,.jpeg,.gif,.png" />
+
+    <label for="featured">Featured</label>
+    <input type="checkbox" id="featured" name="featured" value="true" <%= product.featured ? "checked" : "" %> />
+
+    <button type="submit" class="continue-btn">Update Product</button>
+  </form>
+</div>

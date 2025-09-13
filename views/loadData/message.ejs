@@ -1,0 +1,9 @@
+<% layout = "main" %>
+
+<div class="page-center">
+  <h2><%= title %></h2>
+  <p><%= message %></p>
+  <% if (user && user.role === "clerk") { %>
+    <p><a href="/inventory/list">Return to Products List</a></p>
+  <% } %>
+</div>

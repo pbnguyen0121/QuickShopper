@@ -1,0 +1,60 @@
+<div class="form-container">
+  <h1>Welcome Back</h1>
+  <form action="/log-in" method="POST">
+    
+    <label for="email">Email</label>
+    <input 
+      type="text" 
+      id="email" 
+      name="email" 
+      value="<%= values.email %>"
+    />
+    <% if (validationMessages.email) { %>
+      <p class="error-message"><%= validationMessages.email %></p>
+    <% } %>
+
+    <label for="password">Password</label>
+    <input 
+      type="password" 
+      id="password" 
+      name="password" 
+      value="<%= values.password %>"
+    />
+    <% if (validationMessages.password) { %>
+      <p class="error-message"><%= validationMessages.password %></p>
+    <% } %>
+
+    <div class="role-grid">
+      <div>
+        <label for="clerkRadio">Data Entry Clerk</label>
+      </div>
+      <div>
+        <label for="customerRadio">Customer</label>
+      </div>
+    
+      <div>
+        <input
+          type="radio"
+          name="role"
+          id="clerkRadio"
+          value="clerk"
+          <%= (!values.role || values.role === "clerk") ? "checked" : "" %>
+        />
+      </div>
+      <div>
+        <input
+          type="radio"
+          name="role"
+          id="customerRadio"
+          value="customer"
+          <%= values.role === "customer" ? "checked" : "" %>
+        />
+      </div>
+    </div>
+    <% if (validationMessages.role) { %>
+      <p class="error-message"><%= validationMessages.role %></p>
+    <% } %>
+
+    <button type="submit" class="continue-btn">Continue</button>
+  </form>
+</div>
